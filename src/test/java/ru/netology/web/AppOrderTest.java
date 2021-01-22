@@ -34,7 +34,7 @@ public class AppOrderTest {
     }
 
     @Test
-    void shouldTest() throws InterruptedException {
+    void shouldTest() {
         driver.get("http://0.0.0.0:9999/");
         List<WebElement> elements = driver.findElements(By.className("input__control"));
         elements.get(0).sendKeys("Игоряо Апр");
@@ -43,6 +43,5 @@ public class AppOrderTest {
         driver.findElement(By.className("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
-        Thread.sleep(5_000);
     }
 }

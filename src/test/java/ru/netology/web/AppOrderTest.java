@@ -36,12 +36,22 @@ public class AppOrderTest {
     @Test
     void shouldTest() {
         driver.get("http://0.0.0.0:9999/");
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Игоряо Апр");
-        elements.get(1).sendKeys("+79123456789");
+        driver.findElement(By.cssSelector("[type=text]")).sendKeys("Гарик Харламов");
+        driver.findElement(By.cssSelector("[type=tel]")).sendKeys("+79123456789");
         driver.findElement(By.className("checkbox__box")).click();
-        driver.findElement(By.className("button")).click();
-        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
+        driver.findElement(By.cssSelector("[type=button]")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id=\"order-success\"]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+    }
+
+    @Test
+    void shouldNegativeTestV1() {
+        driver.get("http://0.0.0.0:9999/");
+        driver.findElement(By.cssSelector("[type=text]")).sendKeys("Mario Queue");
+        driver.findElement(By.cssSelector("[type=tel]")).sendKeys("+79123456789");
+        driver.findElement(By.className("checkbox__box")).click();
+        driver.findElement(By.cssSelector("[type=button]")).click();
+        String text = driver.findElement(By.className("input__sub")).getText();
+        assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", text.trim());
     }
 }

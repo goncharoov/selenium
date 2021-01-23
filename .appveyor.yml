@@ -5,6 +5,7 @@ branches:
     - master
 build: off
 install:
-  chmod +x gradlew
+ - chmod +x gradlew
+ - java -jar app-order.jar
 build_script:
   ./gradlew test "-Dselenide.headless=true" --info

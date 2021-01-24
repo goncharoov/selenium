@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static java.lang.Thread.*;
@@ -44,14 +43,4 @@ public class AppOrderTest {
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 
-    @Test
-    void shouldNegativeTestV1() {
-        driver.get("http://0.0.0.0:9999/");
-        driver.findElement(By.cssSelector("[type=text]")).sendKeys("Mario Queue");
-        driver.findElement(By.cssSelector("[type=tel]")).sendKeys("+79123456789");
-        driver.findElement(By.className("checkbox__box")).click();
-        driver.findElement(By.cssSelector("[type=button]")).click();
-        String text = driver.findElement(By.className("input__sub")).getText();
-        assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", text.trim());
-    }
 }

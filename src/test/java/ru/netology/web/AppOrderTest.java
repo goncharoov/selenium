@@ -22,9 +22,8 @@ public class AppOrderTest {
     }
 
     @BeforeEach
-    void setUp() throws InterruptedException {
+    void setUp() {
         driver = new ChromeDriver();
-        Thread.sleep(10_000);
     }
 
     @AfterEach

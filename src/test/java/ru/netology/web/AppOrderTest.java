@@ -33,7 +33,7 @@ public class AppOrderTest {
     }
 
     @Test
-    void shouldTest() {
+    void shouldTest() throws InterruptedException {
         driver.get("http://0.0.0.0:9999/");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("Гарик Харламов");
         driver.findElement(By.cssSelector("[type=tel]")).sendKeys("+79123456789");
@@ -41,6 +41,7 @@ public class AppOrderTest {
         driver.findElement(By.cssSelector("[type=button]")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=\"order-success\"]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+        Thread.sleep(5_000);
     }
 
 }

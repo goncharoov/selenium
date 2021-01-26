@@ -18,11 +18,12 @@ public class AppOrderTest {
     @BeforeAll
     static void setUpAll() {
 //        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().driverVersion("83.0.4103.39").setup();
     }
 
     @BeforeEach
     void setUp() {
+
         driver = new ChromeDriver();
     }
 

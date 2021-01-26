@@ -21,9 +21,9 @@ public class AppOrderTest {
 
     @BeforeEach
     void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless");
+        driver = new ChromeDriver();
     }
 
     @AfterEach

@@ -18,7 +18,7 @@ public class AppOrderTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", ".driver/chromedriver");
     }
 
     @BeforeEach
@@ -26,11 +26,11 @@ public class AppOrderTest {
         driver = new ChromeDriver();
     }
 
-//    @AfterEach
-//    void tearDown() {
-//        driver.quit();
-//        driver = null;
-//    }
+    @AfterEach
+    void tearDown() {
+        driver.quit();
+        driver = null;
+    }
 
     @Test
     void shouldTest() {

@@ -35,7 +35,7 @@ public class AppOrderTest {
     @Test
     void shouldTest() {
         driver.get("http://0.0.0.0:9999/");
-        driver.findElement(By.cssSelector("[type=text]")).sendKeys("Гарик Харламов");
+        driver.findElement(By.cssSelector("[type=text]")).sendKeys("Гари Харламов");
         driver.findElement(By.cssSelector("[type=tel]")).sendKeys("+79123456789");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.cssSelector("[type=button]")).click();

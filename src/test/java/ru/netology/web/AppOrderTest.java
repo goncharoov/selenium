@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
-import static io.github.bonigarcia.wdm.config.DriverManagerType.CHROME;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AppOrderTest {
@@ -18,13 +18,14 @@ public class AppOrderTest {
     @BeforeAll
     static void setUpAll() {
 //        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
-        WebDriverManager.getInstance(CHROME).setup();
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
     void setUp() {
-
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
     }
 
     @AfterEach
@@ -36,7 +37,7 @@ public class AppOrderTest {
     @Test
     void shouldTest() {
         driver.get("http://0.0.0.0:9999/");
-        driver.findElement(By.cssSelector("[type=text]")).sendKeys("Гари Харламов");
+        driver.findElement(By.cssSelector("[type=text]")).sendKeys("Раз Два");
         driver.findElement(By.cssSelector("[type=tel]")).sendKeys("+79123456789");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.cssSelector("[type=button]")).click();

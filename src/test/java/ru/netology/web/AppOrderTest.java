@@ -18,7 +18,7 @@ public class AppOrderTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", ".driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
     }
 
     @BeforeEach

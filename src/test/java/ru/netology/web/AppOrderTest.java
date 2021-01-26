@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
+import static io.github.bonigarcia.wdm.config.DriverManagerType.CHROME;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AppOrderTest {
@@ -18,7 +18,7 @@ public class AppOrderTest {
     @BeforeAll
     static void setUpAll() {
 //        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
-        WebDriverManager.chromedriver().driverVersion("83.0.4103.39").setup();
+        WebDriverManager.getInstance(CHROME).setup();
     }
 
     @BeforeEach

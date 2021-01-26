@@ -26,11 +26,11 @@ public class AppOrderTest {
         driver = new ChromeDriver();
     }
 
-    @AfterEach
-    void tearDown() {
-        driver.quit();
-        driver = null;
-    }
+//    @AfterEach
+//    void tearDown() {
+//        driver.quit();
+//        driver = null;
+//    }
 
     @Test
     void shouldTest() {

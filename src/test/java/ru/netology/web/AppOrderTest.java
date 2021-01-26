@@ -8,10 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static java.lang.Thread.*;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.List;
 
 public class AppOrderTest {
     private WebDriver driver;
@@ -22,9 +19,8 @@ public class AppOrderTest {
     }
 
     @BeforeEach
-    void setUp() throws InterruptedException {
+    void setUp() {
         driver = new ChromeDriver();
-        Thread.sleep(25000);
     }
 
     @AfterEach
